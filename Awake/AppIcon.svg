@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- macOS icon rounded rectangle clip -->
+    <clipPath id="iconClip">
+      <rect x="0" y="0" width="1024" height="1024" rx="228" ry="228"/>
+    </clipPath>
+
+    <!-- Background gradient: deep indigo to dark blue -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A1A8A"/>
+      <stop offset="50%" stop-color="#1E1456"/>
+      <stop offset="100%" stop-color="#0D0B2E"/>
+    </linearGradient>
+
+    <!-- Cup body gradient: warm cream -->
+    <linearGradient id="cupGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8DDD0"/>
+    </linearGradient>
+
+    <!-- Saucer gradient -->
+    <linearGradient id="saucerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F0EA"/>
+      <stop offset="100%" stop-color="#D4C8B8"/>
+    </linearGradient>
+
+    <!-- Coffee liquid gradient -->
+    <linearGradient id="coffeeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B3A2A"/>
+      <stop offset="100%" stop-color="#3D1F14"/>
+    </linearGradient>
+
+    <!-- Steam glow -->
+    <radialGradient id="steamGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle inner shadow for cup -->
+    <filter id="innerShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+      <feOffset dx="0" dy="4" result="offsetBlur"/>
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+    </filter>
+
+    <!-- Drop shadow for cup -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Soft glow for steam -->
+    <filter id="steamBlur">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <!-- Highlight glow -->
+    <filter id="highlightGlow">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+
+    <!-- Star glow -->
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Clipped icon area -->
+  <g clip-path="url(#iconClip)">
+    <!-- Background -->
+    <rect width="1024" height="1024" fill="url(#bgGrad)"/>
+
+    <!-- Subtle radial glow behind the cup -->
+    <ellipse cx="460" cy="520" rx="350" ry="300" fill="url(#steamGlow)" opacity="0.6"/>
+    <ellipse cx="460" cy="400" rx="200" ry="250" fill="#7B4FBF" opacity="0.08"/>
+
+    <!-- Tiny stars in background -->
+    <g opacity="0.5">
+      <circle cx="150" cy="120" r="2.5" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="820" cy="180" r="2" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="900" cy="350" r="1.8" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="120" cy="300" r="1.5" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="750" cy="100" r="2.2" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="200" cy="220" r="1.8" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="870" cy="260" r="1.5" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="680" cy="150" r="1.2" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="300" cy="100" r="1.6" fill="#FFFFFF" filter="url(#starGlow)"/>
+      <circle cx="950" cy="450" r="1.3" fill="#FFFFFF" filter="url(#starGlow)"/>
+    </g>
+
+    <!-- Cup group with drop shadow -->
+    <g filter="url(#dropShadow)">
+
+      <!-- Saucer -->
+      <ellipse cx="460" cy="730" rx="250" ry="45" fill="url(#saucerGrad)"/>
+      <!-- Saucer rim highlight -->
+      <ellipse cx="460" cy="722" rx="230" ry="35" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
+
+      <!-- Cup body: rounded trapezoid shape -->
+      <path d="
+        M 300 420
+        C 300 420, 295 700, 340 710
+        L 580 710
+        C 625 700, 620 420, 620 420
+        Z
+      " fill="url(#cupGrad)"/>
+
+      <!-- Cup body left highlight -->
+      <path d="
+        M 310 430
+        C 310 430, 308 680, 345 705
+        L 355 705
+        C 320 680, 325 430, 325 430
+        Z
+      " fill="#FFFFFF" opacity="0.5"/>
+
+      <!-- Cup rim -->
+      <ellipse cx="460" cy="420" rx="162" ry="32" fill="#F5F0EA"/>
+      <!-- Cup rim highlight -->
+      <ellipse cx="460" cy="415" rx="155" ry="26" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+
+      <!-- Coffee surface -->
+      <ellipse cx="460" cy="420" rx="148" ry="25" fill="url(#coffeeGrad)"/>
+      <!-- Coffee highlight reflection -->
+      <ellipse cx="430" cy="415" rx="60" ry="10" fill="#FFFFFF" opacity="0.12" transform="rotate(-5 430 415)"/>
+
+      <!-- Cup handle -->
+      <path d="
+        M 620 470
+        C 700 470, 720 530, 720 570
+        C 720 610, 700 670, 620 670
+      " fill="none" stroke="url(#cupGrad)" stroke-width="38" stroke-linecap="round"/>
+      <!-- Handle highlight -->
+      <path d="
+        M 625 480
+        C 690 480, 705 535, 705 570
+        C 705 605, 690 655, 625 660
+      " fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+
+    </g>
+
+    <!-- Steam wisps -->
+    <g opacity="0.7">
+      <!-- Left steam wisp -->
+      <path d="
+        M 390 380
+        C 385 340, 370 310, 380 270
+        C 390 230, 375 200, 370 160
+      " fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.5" filter="url(#steamBlur)"/>
+      <path d="
+        M 390 380
+        C 385 340, 370 310, 380 270
+        C 390 230, 375 200, 370 160
+      " fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+
+      <!-- Center steam wisp -->
+      <path d="
+        M 460 370
+        C 465 320, 450 280, 458 240
+        C 466 200, 452 160, 455 110
+      " fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.5" filter="url(#steamBlur)"/>
+      <path d="
+        M 460 370
+        C 465 320, 450 280, 458 240
+        C 466 200, 452 160, 455 110
+      " fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+
+      <!-- Right steam wisp -->
+      <path d="
+        M 530 380
+        C 535 345, 550 315, 540 275
+        C 530 235, 545 200, 542 170
+      " fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.5" filter="url(#steamBlur)"/>
+      <path d="
+        M 530 380
+        C 535 345, 550 315, 540 275
+        C 530 235, 545 200, 542 170
+      " fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <!-- Top highlight glow from steam area -->
+    <ellipse cx="460" cy="250" rx="120" ry="100" fill="#FFFFFF" opacity="0.04" filter="url(#highlightGlow)"/>
+  </g>
+</svg>
