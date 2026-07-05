@@ -11,7 +11,7 @@ macOS puts your MacBook to sleep when you close the lid — unless it detects an
 - **Prevent Sleep** — Uses IOKit power assertions to stop the system from sleeping
 - **Keep Network Active** — Maintains WiFi connectivity while awake
 - **Auto-off Timer** — Automatically disables after 1, 2, or 4 hours
-- **Virtual Display** — Creates a fake 1920x1080 display so macOS stays awake even with the lid closed (clamshell mode), no external monitor required
+- **Virtual Display** — Creates a fake 3840x2160 display so macOS stays awake even with the lid closed (clamshell mode), no external monitor required
 - **Awake & Lock** — Enables awake + virtual display, then locks the screen in one click — perfect for closing the lid and walking away
 - **Launch at Login** — Optionally start on login via macOS ServiceManagement
 
@@ -66,7 +66,7 @@ The app remembers its enabled state between launches.
 |-----------|-----------|
 | Sleep prevention | `kIOPMAssertPreventUserIdleSystemSleep` power assertion |
 | Network keep-alive | `kIOPMAssertNetworkClientActive` power assertion |
-| Virtual display | Private `CGVirtualDisplay` API (1920x1080 @ 60Hz) |
+| Virtual display | Private `CGVirtualDisplay` API (3840x2160 @ 60Hz) |
 | Screen lock | Private `SACLockScreenImmediate` from the login framework |
 | Launch at login | `SMAppService` (macOS 13+) |
 
